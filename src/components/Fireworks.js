@@ -5,11 +5,12 @@ const Fireworks = () => {
   const [show, setShow] = useState(false);
 
   useEffect(() => {
-    const timer = setTimeout(() => setShow(true), 10000); // Start after 10 seconds
-    return () => clearTimeout(timer);
+    setTimeout(() => setShow(true), 1000); // Start fireworks 1 second after loading
   }, []);
 
-  return show ? <Confetti width={window.innerWidth} height={window.innerHeight} /> : null;
+  return (
+    show && <Confetti width={window.innerWidth} height={window.innerHeight} numberOfPieces={300} recycle={false} />
+  );
 };
 
 export default Fireworks;

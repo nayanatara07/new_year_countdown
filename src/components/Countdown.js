@@ -25,13 +25,21 @@ const Countdown = () => {
   });
 
   return (
-    <div className="text-center mt-8">
-      <h2 className="text-2xl font-semibold">Countdown to New Year 2025</h2>
-      <div className="flex justify-center space-x-4 mt-4">
-        <div className="text-xl font-bold">{timeLeft.days || 0}d</div>
-        <div className="text-xl font-bold">{timeLeft.hours || 0}h</div>
-        <div className="text-xl font-bold">{timeLeft.minutes || 0}m</div>
-        <div className="text-xl font-bold">{timeLeft.seconds || 0}s</div>
+    <div className="text-center mt-16 text-white animate-fadeIn">
+      <h2 className="text-3xl font-semibold mb-6">Countdown to New Year 2025</h2>
+      <div className="flex justify-center space-x-6">
+        <div className="text-5xl font-bold bg-gradient-to-r from-primary to-secondary px-6 py-4 rounded-xl shadow-xl hover:scale-105 transform transition duration-300">
+          {timeLeft.days || 0}d
+        </div>
+        <div className="text-5xl font-bold bg-gradient-to-r from-primary to-secondary px-6 py-4 rounded-xl shadow-xl hover:scale-105 transform transition duration-300">
+          {timeLeft.hours || 0}h
+        </div>
+        <div className="text-5xl font-bold bg-gradient-to-r from-primary to-secondary px-6 py-4 rounded-xl shadow-xl hover:scale-105 transform transition duration-300">
+          {timeLeft.minutes || 0}m
+        </div>
+        <div className="text-5xl font-bold bg-gradient-to-r from-primary to-secondary px-6 py-4 rounded-xl shadow-xl hover:scale-105 transform transition duration-300">
+          {timeLeft.seconds || 0}s
+        </div>
       </div>
     </div>
   );

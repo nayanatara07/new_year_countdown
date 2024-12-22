@@ -7,7 +7,7 @@ import './styles/index.css';
 
 const App = () => {
   return (
-    <div className="App">
+    <div className="App min-h-screen bg-background flex flex-col justify-center items-center relative overflow-hidden">
       <Header />
       <Countdown />
       <Wishes />

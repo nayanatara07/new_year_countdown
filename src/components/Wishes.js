@@ -16,12 +16,11 @@ const Wishes = () => {
   };
 
   return (
-    <div className="text-center mt-8">
-      <p className="text-xl font-semibold">{wish}</p>
+    <div className="text-center mt-16 text-white animate-fadeIn">
+      <p className="text-xl font-semibold mb-4">{wish}</p>
       <button 
         onClick={changeWish} 
-        className="mt-4 px-6 py-2 bg-blue-500 text-white rounded-full hover:bg-blue-700 transition duration-300"
-      >
+        className="px-8 py-4 bg-highlight text-white rounded-full shadow-xl hover:bg-primary transform transition duration-300 hover:scale-105">
         New Wish
       </button>
     </div>

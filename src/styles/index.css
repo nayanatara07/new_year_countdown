@@ -17,3 +17,30 @@ code {
 @tailwind utilities;
 @import 'animate.css';
 
+.bg-gradient {
+  background: linear-gradient(90deg, #ff9a9e, #fad0c4, #fad0c4);
+  animation: gradientMove 15s infinite;
+}
+
+@keyframes gradientMove {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+@keyframes float {
+  0% {
+    transform: translateY(100%);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(-100%);
+    opacity: 1;
+  }
+}
+.balloon {
+  position: absolute;
+  bottom: 0;
+  animation: float 10s infinite ease-in-out;
+}
+
+

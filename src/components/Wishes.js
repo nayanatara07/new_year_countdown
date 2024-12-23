@@ -1,28 +1,39 @@
 import React, { useState } from 'react';
 
-const wishes = [
-  "May this New Year bring you joy, success, and happiness!",
-  "Wishing you a year filled with love and laughter!",
-  "Cheers to new beginnings and endless opportunities!",
-  "May your dreams come true in 2024!",
-];
-
 const Wishes = () => {
-  const [wish, setWish] = useState(wishes[0]);
+  const [wishes, setWishes] = useState(["Happy New Year!"]);
+  const [newWish, setNewWish] = useState("");
 
-  const changeWish = () => {
-    const randomWish = wishes[Math.floor(Math.random() * wishes.length)];
-    setWish(randomWish);
+  const addWish = () => {
+    if (newWish.trim()) {
+      setWishes([...wishes, newWish]);
+      setNewWish("");
+    }
   };
 
   return (
-    <div className="text-center mt-16 text-white animate-fadeIn">
-      <p className="text-xl font-semibold mb-4">{wish}</p>
-      <button 
-        onClick={changeWish} 
-        className="px-8 py-4 bg-highlight text-white rounded-full shadow-xl hover:bg-primary transform transition duration-300 hover:scale-105">
-        New Wish
-      </button>
+    <div className="text-center mt-8">
+      <h3 className="text-xl font-semibold mb-4">Your Wishes</h3>
+      <ul className="space-y-2">
+        {wishes.map((wish, index) => (
+          <li key={index} className="text-lg">{wish}</li>
+        ))}
+      </ul>
+      <div className="mt-4">
+        <input
+          type="text"
+          value={newWish}
+          onChange={(e) => setNewWish(e.target.value)}
+          placeholder="Write your wish..."
+          className="border rounded px-4 py-2 mr-2"
+        />
+        <button
+          onClick={addWish}
+          className="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-700 transition"
+        >
+          Add Wish
+        </button>
+      </div>
     </div>
   );
 };

@@ -42,5 +42,13 @@ code {
   bottom: 0;
   animation: float 10s infinite ease-in-out;
 }
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  @apply bg-gradient-to-br from-blue-500 to-purple-700 text-white;
+}
+
 
 
